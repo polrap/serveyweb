@@ -1,0 +1,36 @@
+@charset "UTF-8";
+body{
+	margin:auto;
+	witdh: 100%;
+}
+hr{
+	border: dotted 10px black;
+}
+form{
+	margin:auto;
+	text-align:center;
+	witdh: 100%;
+}
+h3{
+	 text-align:center;
+}
+
+input{
+	size:30%;
+	text-align:center;
+	witdh: 50%;
+	background-color: black;
+	color: white;
+	border-radius:15px
+}
+label{
+	size:30%;
+	text-align:center;
+	witdh: 60%;
+	background-color: black;
+	color: white;
+	border-radius:5px
+}
+fieldset{
+	witdh: 10%;
+}

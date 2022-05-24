@@ -32,6 +32,17 @@ function servaycode(){
 	}else{
 		document.serveylistinfo.submit();
 	}
-	
-	
+}
+
+function serveyplace(){
+	document.serveylistinfo.serveycodename.placeholder="";
+}
+function serveyplaceOver(){
+	document.serveylistinfo.serveycodename.placeholder="장르이름을 넣어주세요";
+}
+function songplace(){
+	document.serveylistinfo.songName.placeholder="";
+}
+function songplaceOver(){
+	document.serveylistinfo.songName.placeholder="장르이름을 넣어주세요";
 }

@@ -268,11 +268,11 @@ public class MainCtrl {
 	}
 	public boolean songIn(int age,int gender, int value,String songN) {
 		boolean songInComplete=true;
-		System.out.println(svo);
 		try {
 			if(songDAO.selectOne(songN, value)) {
 				songDAO.updateSongCount(songN,value);
 			}else if(!songDAO.selectOne(songN, value)) {
+				svo=new SongVO(songN,value);
 				songDAO.insertSong(svo);
 			}
 		} catch (SQLException e) {

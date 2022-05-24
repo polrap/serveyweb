@@ -25,3 +25,9 @@ function gendercheck(){
 	}
 	document.gen.submit();
 }
+function place(){
+	document.serveyinfo.age.placeholder="";
+}
+function placeOver(){
+	document.serveyinfo.age.placeholder="연령대를 넣어주세요";
+}

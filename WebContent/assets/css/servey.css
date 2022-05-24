@@ -1,27 +1,44 @@
 @charset "UTF-8";
-form{
-	margin:auto;
-	text-align:center;
+.etc{
+	
 }
-lable{
-	text-align:center;
-}
-.board{
-    text-align:center;
-    border-collapse:collapse;
-}
-.board td {
-    border:1px solid #333;
+.tdt{
+	 border:1px solid #333;
     text-align:left;
     width:200px;    
     height:30px;
     border:1px solid #333;
 }
+form{
+	margin:auto;
+	text-align:center;
+}
+h3{
+	 text-align:center;
+}
+
+.board{
+	margin-left: auto; margin-right: auto;
+	size:100%;
+	witdh: 50%;
+   text-align:center;
+    border-collapse:collapse;
+}
+.board td {
+	size:100%;
+	witdh: 50%;
+    border:1px solid #333;
+   text-align:center;
+    width:200px;    
+    height:30px;
+    border:1px solid #333;
+}
 .board td .input{
-    width:97%;
+    width:100%;
 }
 .board .attr{
-    width: 300px;
+	size:100%;
+    width: 50%;
     text-align:center;
 }
 input{
@@ -32,7 +49,7 @@ input{
 	color: white;
 	border-radius:15px
 }
-label{
+.label{
 	size:30%;
 	text-align:center;
 	witdh: 60%;

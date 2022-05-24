@@ -20,6 +20,7 @@ public class SongDAO extends DataBaseConnectResource{
 	}
 	public void insertSong(SongVO svo) throws SQLException{
 		String sql = "insert into \"SONG\" values (?, ?, 1)";
+		System.out.println(svo.getServeyCode());
 		try {
 			conn = ConnUtil.getConnection();
 			pstmt = conn.prepareStatement(sql);
