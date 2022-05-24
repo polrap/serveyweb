@@ -1,0 +1,104 @@
+package serveyweb;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.ArrayList;
+import java.util.List;
+public class SongDAO extends DataBaseConnectResource{
+	private static SongDAO instance = null;
+	private Connection conn = null;
+	public SongDAO() {}
+	public static SongDAO getInstance() {
+		if(instance==null) {
+			 synchronized(SongDAO.class){
+	                instance = new SongDAO();
+	            }
+		}
+		return instance;
+	}
+	public void insertSong(SongVO svo) throws SQLException{
+		String sql = "insert into \"SONG\" values (?, ?, 1)";
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong (1, svo.getServeyCode());
+			pstmt.setString(2, svo.getSongName()); 
+			pstmt.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		finally {
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+	public boolean selectOne(String songname, long code)throws SQLException{
+		List<SongVO> ls = new ArrayList<>();
+		boolean si=true;
+		String sql = "select * from \"SONG\" where \"SERVEY_CODE\"= ? and \"SONGNAME\"=? ";
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1,code);
+			pstmt.setString(2, songname);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				si=true;
+			}else if(!rs.next()) {
+				si=false;
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if(rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		return si;
+	}
+	public void updateSongCount(String songname, long code) throws SQLException{
+		String sql="update \"SONG\" set \"SONGCOUNT\"=\"SONGCOUNT\"+1"
+				+ " where \"SERVEY_CODE\"="+code +"and \"SONGNAME\"='"+ songname +"'";
+//		String sql="update \"SONG\" set \"SONGCOUNT\"=(select \"SONGCOUNT\" from \"SONG\" where \"SERVEY_CODE\"="+code+"and"+"\"SONGNAME\"="+"'"+songname+"'"+""+")+1" +""
+//				+ " where \"SERVEY_CODE\"="+code +"and \"SONGNAME\"='"+ songname +"'";
+		try {
+			conn = ConnUtil.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			int result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+	}
+}
