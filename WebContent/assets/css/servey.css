@@ -6,3 +6,37 @@ form{
 lable{
 	text-align:center;
 }
+.board{
+    text-align:center;
+    border-collapse:collapse;
+}
+.board td {
+    border:1px solid #333;
+    text-align:left;
+    width:200px;    
+    height:30px;
+    border:1px solid #333;
+}
+.board td .input{
+    width:97%;
+}
+.board .attr{
+    width: 300px;
+    text-align:center;
+}
+input{
+	size:30%;
+	text-align:center;
+	witdh: 50%;
+	background-color: black;
+	color: white;
+	border-radius:15px
+}
+label{
+	size:30%;
+	text-align:center;
+	witdh: 60%;
+	background-color: #6633FF;
+	color: #99FF99;
+	border-radius:5px
+}

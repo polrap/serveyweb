@@ -118,7 +118,10 @@ public class MainCtrl {
 		gender=sc.nextInt();
 		return gender;
 	}
-	
+//	public char genderChoice() {
+//		char gender;
+//		return gender;
+//	}
 	public boolean ageTran(int age) {
 		boolean agestat=true;
 		if(age%10!=0) {

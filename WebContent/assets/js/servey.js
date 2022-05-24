@@ -11,10 +11,17 @@ function valueCheck(){
 	}
 	if(document.serveyinfo.gender.value==""){
 		alert("성별을 체크해주세요");
-		document.serveyinfo.age.focus();
+		document.serveyinfo.gender.focus();
 		return;
 	}	
 	
 	
 	document.serveyinfo.submit();
+}
+function gendercheck(){
+	if(document.gen.gender.value==""){
+		alert("성별을 체크해주세요");
+		return;
+	}
+	document.gen.submit();
 }

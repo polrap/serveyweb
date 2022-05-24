@@ -3,14 +3,20 @@ h3{
 	text-align:center;
 }
 form{
+	
 	margin:auto;
 	text-align:center;
+	width:50%
 }
 input{
+	size:30%;
 	text-align:center;
-	witdh: 100px;
+	witdh: 50%;
 	height: 50px;
 	background-color: black;
 	color: white;
 	border-radius:15px
+}
+a{
+	witdh: 50%;
 }

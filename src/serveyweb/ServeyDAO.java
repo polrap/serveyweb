@@ -85,7 +85,7 @@ public class ServeyDAO extends DataBaseConnectResource{
 		if(selectquery==1) {
 			sql= "select  * from \"SERVEY\"order by \"SERVEY_CODE\" ";
 		}else if(selectquery==2) {
-			sql= "select  * from \"SERVEY\"order by \"SERVEY_COUNT\" desc ";
+			sql= "select  * from \"SERVEY\" where \"SERVEY_COUNT\">0 order by \"SERVEY_COUNT\" desc ";
 		}
 		List<ServeyVO> ls = new ArrayList<>();
 		

@@ -36,16 +36,16 @@ public class JoinVO {
 				+ longcolumn1 + ", longcolumn2=" + longcolumn2 + "]";
 	}
 	public String genderQueryString() {
-		return "[�帣��=" +  stringcolumn1 +  
-		"  \t"+"��ǥ ��=\t" + longcolumn1 + "]";
+		return "[장르명=" +  stringcolumn1 +  
+		"  \t"+"투표 수\t" + longcolumn1 + "]";
 	}
 	public String secondQueryString() {
-		return "[���ɴ�=" +  longcolumn1 +  
-		",\t �帣��=" + stringcolumn1 + "  \t"+"��ǥ ��=\t" + longcolumn2 + "]";
+		return "[연령대=\t" +  longcolumn1 +  
+		",\t 장르명:\t" + stringcolumn1 + "  \t"+"투표수\t" + longcolumn2 + "]";
 	}
 	public String threeQueryString() {
-		return "[�帣��=" +  stringcolumn1 +  
-		",\t �� ��=" +stringcolumn2  + "\t"+"��ǥ ��=\t" + longcolumn1 + "]";
+		return "[장르명=" +  stringcolumn1 +  
+		",\t 곡명=" +stringcolumn2  + "\t"+"투표수=\t" + longcolumn1 + "]";
 	}
 	public String getStringcolumn1() {
 		return stringcolumn1;

@@ -20,7 +20,7 @@ public class ServeyVO {
 	}
 	
 	public String inString() {
-		return "[�帣��:\t" + serveyname + ", ��ǥ ��:\t" + serveycount
+		return "[장르명:\t" + serveyname + "]\t[득표 수:\t" + serveycount
 				+ "]";
 	}
 

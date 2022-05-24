@@ -4,6 +4,7 @@
 <%@ page import = "java.util.List" %>
 <%@ page import ="serveyweb.ServeyVO" %>
 <%@ page import="serveyweb.SongVO" %>
+<% request.setCharacterEncoding("UTF-8"); %>
 <% 
 int age=Integer.parseInt(request.getParameter("age"));
 char gender=request.getParameter("gender").charAt(0);
@@ -19,7 +20,7 @@ if(count>=0){
 }
 
 %>
-<% request.setCharacterEncoding("UTF-8"); %>
+
 <!DOCTYPE html>
 <html>
 <head>
