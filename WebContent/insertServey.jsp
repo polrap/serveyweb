@@ -12,8 +12,17 @@
 <jsp:setProperty name="uvo" property="*"/>
 
 
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
 <%
-//int servey=Integer.parseInt(request.getParameter("servey"));
+if(request.getParameter("age")==null){
+	%>
+	<script type="text/javascript">location.href="index.jsp"; alert("잘못된 접근 입니다.")</script>
+<% }else{
 int age=Integer.parseInt(request.getParameter("age"));
 char gender=request.getParameter("gender").charAt(0);
 int servey=Integer.parseInt(request.getParameter("serveyCode"));
@@ -31,15 +40,18 @@ if(udao.selectUser(servey,age,gender)){
 }else if(udao.selectUser(servey, age, gender)==false){
 	udao.insertUser(uvo);
 }
+}
 %>
-<!DOCTYPE html>
-<html>
-<head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>설문 종료</title>
 </head>
+
 <body>
+<div class="mx-auto">
+<form>
 <h3>설문에 참여해주셔서 감사합니다.</h3>
 <a href="index.jsp">처음으로 돌아가기</a>
+</form>
+</div>
 </body>
 </html>

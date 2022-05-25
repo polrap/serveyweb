@@ -18,7 +18,6 @@ MainCtrl mc=new MainCtrl();
 int servey=Integer.parseInt(request.getParameter("serveyCode"));
 String serveyName=request.getParameter("serveycodename");
 String songname=request.getParameter("songName");
-System.out.println(servey+""+age+""+ gender+""+serveyName);
 if(mc.etc(age, gender, servey,serveyName)){
 	servey=sdao.lastServey_Code();
 	if(mc.makeUser(servey, age, gender)){
